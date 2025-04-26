@@ -32,6 +32,16 @@ The notebook is organized around a workflow with these main components:
 
 For follow-up questions, there's a special rewriting step that converts context-dependent questions (like "Who directed it?") into complete questions (like "Who directed The Godfather?").
 
+### Agents Used
+- **Web Search Agent**:  
+  Uses the Tavily Search API to perform real‐time web searches for the user’s query, fetching top‐ranked pages and raw content snippets for downstream processing.
+
+- **Content Extraction Agent**:  
+  Leverages Gemini 2.0 Flash to parse the search results, identify the most relevant 1–2 paragraphs, clean out ads or boilerplate, and produce concise, fact‐focused text blocks.
+
+- **Response Synthesis Agent**:  
+  Calls Llama3 (70B) to take the cleaned content and conversation context, then craft a fluent, natural‐language response tailored to the user’s question style and intent.```
+
 ## Key Features
 
 - **Contextual Awareness**: Maintains conversation history to understand follow-ups
